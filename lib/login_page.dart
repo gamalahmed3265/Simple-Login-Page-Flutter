@@ -11,9 +11,23 @@ class LoginPage extends StatelessWidget {
       body: const Padding(
         padding: EdgeInsets.all(20.0),
         child: Column(
-          children: [TitleOfLogin()],
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [TitleOfLogin(), SparteWidget(), ParagraphOfLogin()],
         ),
       ),
+    );
+  }
+}
+
+class SparteWidget extends StatelessWidget {
+  const SparteWidget({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return const SizedBox(
+      height: 10,
     );
   }
 }
@@ -31,6 +45,23 @@ class TitleOfLogin extends StatelessWidget {
           .textTheme
           .headlineLarge
           ?.copyWith(color: mainColor, fontWeight: FontWeight.bold),
+    );
+  }
+}
+
+class ParagraphOfLogin extends StatelessWidget {
+  const ParagraphOfLogin({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      "Please Login ",
+      style: Theme.of(context)
+          .textTheme
+          .bodySmall
+          ?.copyWith(color: grey, fontWeight: FontWeight.bold),
     );
   }
 }
